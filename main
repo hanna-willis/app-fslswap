@@ -1,7 +1,9 @@
 #!/bin/bash
-#PBS -l nodes=1:ppn=1
-#PBS -l vmem=8
-#PBS -l walltime=01:00:00
+
+#SBATCH --job-name=template
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=1G
+#SBATCH --time=00:15:00
 
 # Copyright (c) 2020 brainlife.io at University of Texas at Austin and Indiana University
 # 
