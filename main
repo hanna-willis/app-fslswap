@@ -11,8 +11,11 @@
 #
 # Author: Franco Pestilli
 
+T1=`jq -r '.t1' config.json`
+DIMENSIONS=`jq -r '.swap_dimensions' config.json`
+
 # make output directory
 mkdir -p out_dir
 
 # run the actual run fslswapdim
-fslswapdim t1.nii.gz -x y z out_dir/t1.nii.gz
+fslswapdim T1 DIMENSIONS out_dir/t1.nii.gz
