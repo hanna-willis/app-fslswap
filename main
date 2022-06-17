@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=template
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=1G
+#SBATCH --mem=4G
 #SBATCH --time=00:15:00
 
 # Copyright (c) 2020 brainlife.io at University of Texas at Austin and Indiana University
@@ -14,5 +14,5 @@
 # make output directory
 mkdir -p out_dir
 
-# run the actual python code
-singularity exec docker://brainlife/dipy:1.1.1 python3 main.py
+# run the actual run fslswapdim
+fslswapdim t1.nii.gz -x y z out_dir/t1.nii.gz
