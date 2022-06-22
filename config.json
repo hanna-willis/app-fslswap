@@ -1,0 +1,6 @@
+{
+    "input": ".nii.gz",
+    "swap_dimensions": "y -x z"
+    "bvecs": ".bvecs"
+    "dwi_sbref": ".sbref"
+}
