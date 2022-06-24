@@ -24,8 +24,9 @@ mkdir -p out_dir
 
 if [ "$(basename $input)" == "dwi.nii.gz" ]; then
   fslswapdim $input $dimensions out_dir/$input
+  
   # This is a Saad python script 
-  bvecswap $bvecs $dimensions out_dir/$bvecs
+  bvec_swap.py $bvecs $dimensions out_dir/$bvecs
   fslswapdim $dwi_sbref $dimensions out_dir/$dwi_sbref
 
 # Else, if not DTI then do this (input for fMRI and anat is the same - single input nifti)
