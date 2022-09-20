@@ -25,10 +25,10 @@ mkdir -p out_dir
 if [ $dwi != "null" ]; then 
 
    echo "Run dwi swap"
-   time singularity exec -e docker://brainlife/fsl:5.0.11 fslswapdim $dwi $dimensions out_dir/dwi.nii.gz
+   fslswapdim $dwi $dimensions out_dir/dwi.nii.gz
    
    # This is a Saad python script
-   singularity exec -e docker://brainlife/dipy:0.16.0 python bvec_swap.py $bvecs $dimensions out_dir/dwi.bvecs
+   python3 bvec_swap.py $bvecs $dimensions out_dir/dwi.bvecs
    cp $bvals out_dir/dwi.bvals
    
    #if [ $sbref != "null" ]; then
@@ -38,25 +38,15 @@ if [ $dwi != "null" ]; then
 elif [ $t1 != "null" ]; then 
 
    echo "Run t1 swap"   
-   time singularity exec -e docker://brainlife/fsl:5.0.11 fslswapdim $t1 $dimensions out_dir/t1.nii.gz
+   fslswapdim $t1 $dimensions out_dir/t1.nii.gz
    
 elif [ $fmri != "null" ]; then 
 
    echo "Run fmri swap"   
-   time singularity exec -e docker://brainlife/fsl:5.0.11 fslswapdim $fmri $dimensions out_dir/bold.nii.gz  
+   fslswapdim $fmri $dimensions out_dir/bold.nii.gz  
     
    if [ $sbref != "null" ]; then
-   time singularity exec -e docker://brainlife/fsl:5.0.11 fslswapdim $sbref $dimensions out_dir/sbref.nii.gz  	
+   fslswapdim $sbref $dimensions out_dir/sbref.nii.gz  	
    fi
    
-fi   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+fi 

@@ -1,5 +1,3 @@
-#!/usr/bin/env fslpython
-
 import sys
 
 nargs = len(sys.argv) - 1

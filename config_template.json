@@ -1,0 +1,9 @@
+{
+    "dwi": "./dwi.nii.gz",
+    "swap_dimensions": "-x y z",
+    "bvecs": "./dwi.bvecs",
+    "bvals": "./dwi.bvals",
+    "sbref": "",
+    "t1": "",
+    "fmri": ""
+}
