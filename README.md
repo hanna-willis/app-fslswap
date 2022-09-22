@@ -7,6 +7,7 @@ This app runs fslswapdim from FSL on the brainlife.io interface. The app current
 ### Authors
 - Hanna Willis (hanna.willis@ndcn.ox.ac.uk)
 - Rebecca Truby (rebecca.truby@ndcn.ox.ac.uk)
+- Giulia Berto
 
 ### Contributors
 - Saad Jbabdi (saad.jbabdi@ndcn.ox.ac.uk)
