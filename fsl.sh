@@ -22,7 +22,7 @@ dimensions=`jq -r '.swap_dimensions' config.json`
 # make output directory
 mkdir -p out_dir
 
-if [ $dwi != "null" ]; then 
+if [ -f "$dwi" ]; then 
 
    echo "Run dwi swap"
    fslswapdim $dwi $dimensions out_dir/dwi.nii.gz
@@ -31,21 +31,21 @@ if [ $dwi != "null" ]; then
    bash python.sh
    cp $bvals out_dir/dwi.bvals
    
-   #if [ $sbref != "null" ]; then
+   #if [ -f "$sbref" ]; then
    #   fslswapdim $sbref $dimensions out_dir/sbref.nii.gz  	
    #fi
    
-elif [ $t1 != "null" ]; then 
+elif [ -f "$t1" ]; then 
 
    echo "Run t1 swap"   
    fslswapdim $t1 $dimensions out_dir/t1.nii.gz
    
-elif [ $fmri != "null" ]; then 
+elif [ -f "$fmri" ]; then 
 
    echo "Run fmri swap"   
    fslswapdim $fmri $dimensions out_dir/bold.nii.gz  
     
-   if [ $sbref != "null" ]; then
+   if [ -f "$sbref" ]; then
    fslswapdim $sbref $dimensions out_dir/sbref.nii.gz  	
    fi
    
