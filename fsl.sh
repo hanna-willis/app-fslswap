@@ -1,16 +1,5 @@
 #!/bin/bash
 
-#SBATCH --job-name=fslswap
-#SBATCH --ntasks-per-node=1
-#SBATCH --mem=4G
-#SBATCH --time=00:15:00
-
-# Copyright (c) 2020 brainlife.io at University of Texas at Austin and Indiana University
-# 
-# This is the main file run by the brainlife.io orchestration system
-#
-# Author: Hanna Willis, Rebecca Truby & Giulia Bertò
-
 dwi=`jq -r '.dwi' config.json`
 bvecs=`jq -r '.bvecs' config.json`
 bvals=`jq -r '.bvals' config.json`
