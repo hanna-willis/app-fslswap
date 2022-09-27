@@ -11,6 +11,9 @@
 #
 # Author: Hanna Willis, Rebecca Truby & Giulia Bertò
 
+set -x
+set -e
+
 ## Run anat, fMRI and dwi (without bvecs) swap 
 time singularity exec -e docker://brainlife/fsl:5.0.11 ./fsl.sh
 
