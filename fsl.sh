@@ -16,9 +16,7 @@ if [ -f "$dwi" ]; then
    echo "Run dwi swap"
    fslswapdim $dwi $dimensions out_dir/dwi.nii.gz
    
-   # This is a Saad python script
-   bash python.sh
-   cp $bvals out_dir/dwi.bvals
+   # Swap bvecs will happen in main script. 
    
    #if [ -f "$sbref" ]; then
    #   fslswapdim $sbref $dimensions out_dir/sbref.nii.gz  	
