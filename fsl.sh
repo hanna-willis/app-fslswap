@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -x
+set -e
+
 dwi=`jq -r '.dwi' config.json`
 bvecs=`jq -r '.bvecs' config.json`
 bvals=`jq -r '.bvals' config.json`
