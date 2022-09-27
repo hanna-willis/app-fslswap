@@ -28,7 +28,7 @@ if [ -f "$dwi" ]; then
 
    # This is a Saad python script
    singularity exec -e docker://brainlife/dipy:0.16.0 python bvec_swap.py $bvecs $dimensions out_dir/dwi.bvecs
-   cp $bvals out_dir/dwi.bvals
+   cp $bvals ./out_dir/dwi.bvals
    
 fi
    
