@@ -11,13 +11,23 @@
 #
 # Author: Hanna Willis, Rebecca Truby & Giulia Bertò
 
+## Run anat, fMRI and dwi (without bvecs) swap 
 time singularity exec -e docker://brainlife/fsl:5.0.11 ./fsl.sh
 
+## Run dwi bvecs swap 
+
+# Set up configs
+dwi=`jq -r '.dwi' config.json`
+bvecs=`jq -r '.bvecs' config.json`
+dimensions=`jq -r '.swap_dimensions' config.json`
+  
+if [ -f "$dwi" ]; then 
+
+   # This is a Saad python script
+   singularity exec -e docker://brainlife/dipy:0.16.0 python bvec_swap.py $bvecs $dimensions out_dir/dwi.bvecs
+   cp $bvals out_dir/dwi.bvals
    
-   
-   
-   
-   
+fi
    
    
    
